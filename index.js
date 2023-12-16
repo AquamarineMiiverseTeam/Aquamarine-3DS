@@ -1,6 +1,10 @@
 const express = require('express');
 const colors = require('colors');
-const ejs = require('ejs')
+const ejs = require('ejs');
+const util = require('util');
+
+const con = require('./database_con');
+const query = util.promisify(con.query).bind(con);
 
 const path = require('path')
 
