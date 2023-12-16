@@ -63,13 +63,15 @@ long {
 .community_icon_home {
     margin-left: 5px;
 
+    border-radius: 1px;
+
     vertical-align: middle;
     display: inline;
 }
 
 .community_name_home {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
 
     vertical-align: top;
 
@@ -94,5 +96,22 @@ long {
 
     color: white;
 
-    margin-bottom: 10px;
+    margin-bottom: 3px;
+}
+
+.community_name_wrapper {
+    display: inline-block;
+
+    width: 200px;
+
+    vertical-align: middle;
+}
+
+.community_platform_indicator_home {
+    display: inline-block;
+
+    font-size: 12px;
+
+    position: relative;
+    bottom: 5px;
 }

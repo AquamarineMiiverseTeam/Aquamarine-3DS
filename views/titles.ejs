@@ -18,7 +18,15 @@
                     
                     <div class="community_home">
                         <img class="community_icon_home" width="50px" src="../../img/icons/0.png">
-                        <span class="community_name_home"><%= community.name %></span>
+                        <div class="community_name_wrapper">
+                            <span class="community_name_home"><%= community.name %> Community</span>
+                            <span class="community_platform_indicator_home"><% if (community.platform == "3ds") {%>
+                                3DS Games
+                            <%} else {%>
+                                Wii U Games
+                            <%} %></span>
+                        </div>
+                        
                     </div>
         
                 <%}%>
