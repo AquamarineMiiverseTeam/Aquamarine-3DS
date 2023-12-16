@@ -44,3 +44,55 @@ long {
 
     left: 40px;
 }
+
+.community_home {
+    width: 310px;
+    height: 50px;
+    position: relative;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    left: 5px;
+
+    border-bottom: dashed rgb(161, 161, 161) 1px;
+
+    text-align: left;
+}
+
+.community_icon_home {
+    margin-left: 5px;
+
+    vertical-align: middle;
+    display: inline;
+}
+
+.community_name_home {
+    font-weight: bold;
+    font-size: 14px;
+
+    vertical-align: top;
+
+    display: inline-block;
+
+    width: 200px;
+    height: 100%;
+}
+
+.new_communities_home {
+    width: 300px;
+    
+    position: relative;
+    left: 5px;
+
+    background-color: rgb(78, 157, 177);
+    border-radius: 3px;
+
+    padding: 5px;
+
+    text-align: left;
+
+    color: white;
+
+    margin-bottom: 10px;
+}

@@ -9,20 +9,21 @@
 </head>
 <body>
     <long style="text-align: center; height: 800px;">
-        Hello! This is the titles/show page!
+        <div style="position: relative; top: 230px;">
+            <div class="new_communities_home">New Communities</div>
+
+            <div style="position: relative;">
+                <% for (let i = 0; i < communities.length; i++) {
+                    const community = communities[i];%>
+                    
+                    <div class="community_home">
+                        <img class="community_icon_home" width="50px" src="../../img/icons/0.png">
+                        <span class="community_name_home"><%= community.name %></span>
+                    </div>
         
-        <br> <br>
-
-        This will show all of the latest and greatest communities. Stay tuned.
-
-        <br> <br> <br> <br> <br> <br> <br> <br> <br>
-
-        <form action="https://api.olv.nonamegiven.xyz/v1/posts" method="post" enctype="multipart/form-data">
-            <input type="text" name="body" placeholder="Tap here to add text..">
-            <input type="submit">
-        </form>
-
-        <a href="./show"></a>
+                <%}%>
+            </div>
+        </div>
     </long>
 </body>
 <script>cave.toolbar_setActiveButton(3)</script>

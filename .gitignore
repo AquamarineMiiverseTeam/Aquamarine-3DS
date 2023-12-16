@@ -130,3 +130,4 @@ dist
 .pnp.*
 
 config/database.json
+static/img/icons/*.png
