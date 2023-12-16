@@ -1,7 +1,18 @@
+@charset 'UTF-8';
+@font-face {
+    font-family: 'MiiverseSymbols';
+    src: url('./MiiverseSymbols-Regular.ttf');
+}
+
 * {
     margin: 0;
 
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.symbols {
+    font-family: 'MiiverseSymbols', sans-serif !important;
+    font-weight: normal!important;
 }
 
 html,
@@ -20,6 +31,7 @@ top {
     height: 220px;
 
     display: block;
+    position: absolute;
 }
 
 bottom {
@@ -40,9 +52,41 @@ long {
     width: 320px;
 
     display: block;
+    position: absolute;
+    left: 40px;
+}
+
+.communities_header_home {
+    width: 400px;
+    height: 220px;
+}
+
+.communities_header_title_home {
+    position: relative;
+    top: 165px;
+
+    padding: 10px;
+
+    background-color: rgb(233, 233, 233);
+    border-top: rgb(130, 214, 214) 5px solid;
+
+    text-align: left;
+}
+
+.communities_header_title_text_home {
+    font-weight: bold;
+
+    display: inline-block;
+
+    margin: 5px;
+    margin-left: 40px;
+}
+
+.communities_wrapper_home {
     position: relative;
 
-    left: 40px;
+    width: 320px;
+    top: 220px;
 }
 
 .community_home {
@@ -51,7 +95,7 @@ long {
     position: relative;
 
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 
     left: 5px;
 
@@ -88,7 +132,6 @@ long {
     left: 5px;
 
     background-color: rgb(78, 157, 177);
-    border-radius: 3px;
 
     padding: 5px;
 
@@ -97,6 +140,8 @@ long {
     color: white;
 
     margin-bottom: 3px;
+
+    border-radius: 1px;
 }
 
 .community_name_wrapper {
@@ -113,5 +158,4 @@ long {
     font-size: 12px;
 
     position: relative;
-    bottom: 5px;
 }
