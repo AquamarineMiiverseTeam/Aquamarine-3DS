@@ -131,3 +131,4 @@ dist
 
 config/database.json
 static/img/icons/*.png
+static/img/icons/*.jpg

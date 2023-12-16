@@ -17,7 +17,7 @@
                     const community = communities[i];%>
                     
                     <div class="community_home">
-                        <img class="community_icon_home" width="50px" src="../../img/icons/0.png">
+                        <img class="community_icon_home" width="50px" src="../../img/icons/<%= community.id %>.jpg">
                         <div class="community_name_wrapper">
                             <span class="community_name_home"><%= community.name %> Community</span>
                             <span class="community_platform_indicator_home"><% if (community.platform == "3ds") {%>
