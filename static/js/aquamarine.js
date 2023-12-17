@@ -96,3 +96,8 @@ function banMessage()
     cave.error_callFreeErrorViewer(20102, "You have been banned. MUAAHHAAHHAHAHAHAHHAHAHAHAHAHHAHAAHHAH!!!!!!!!!");
     cave.exitApp();
 }
+
+function load_welcome_page(display, hide) {
+    $("#page-" + hide.toString()).hide()
+    $("#page-" + display.toString()).show();
+}

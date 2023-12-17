@@ -9,8 +9,30 @@
 </head>
 
 <body>
-    <top></top>
-    <bottom></bottom>
+    <div id="page-1" style="display: block;">
+        <top>
+            <span class="welcome_to_aquamarine">Welcome to Aquamarine!</span>
+            <img class="welcome_top_img" src="../../img/welcome/welcome1.png">
+        </top>
+        <bottom>
+            <div class="welcome_text_box">Welcome to Aquamarine! It seems that you don't have an account? Let's get one set up!</div>
+            <a class="welcome_next" href="javascript:void(0)" onclick="load_welcome_page(2, 1)">Next</a>
+        </bottom>
+    </div>
+    
+
+    <div id="page-2" style="display: none;">
+        <top>
+            <span class="welcome_to_aquamarine">Welcome to Aquamarine!</span>
+            <img class="welcome_top_img" src="../../img/welcome/welcome1.png">
+        </top>
+        <bottom>
+            <div class="welcome_text_box">This is the second page! This means it's working.</div>
+            <a class="welcome_next" href="javascript:void(0)" onclick="load_welcome_page(1, 2)">Next</a>
+        </bottom>
+    </div>
 </body>
 
-<script>cave.snd_playBgm("BGM_CAVE_SYOKAI")</script>
+<script src="../../../js/jquery-3.7.1-min.js"></script>
+<script id="disableSidebar" src="../../../js/aquamarine.js"></script>
+<script>cave.snd_stopBgm(); cave.snd_playBgm("BGM_CAVE_SYOKAI");</script>

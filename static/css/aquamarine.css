@@ -34,16 +34,16 @@ top {
     position: absolute;
 }
 
-bottom {
-    /* background-color: aquamarine; */
-    
+bottom {    
     width: 320px;
     height: 240px;
 
     display: block;
-    position: relative;
+    position: absolute;
 
     left: 40px;
+
+    top: 220px;
 }
 
 long {
@@ -158,4 +158,72 @@ long {
     font-size: 12px;
 
     position: relative;
+}
+
+.welcome_top_img {
+    width: 400px;
+    position: relative;
+    top: 12px;
+}
+
+.welcome_to_aquamarine {
+    width: 400px;
+
+    text-align: center;
+    padding-top: 25px;
+
+    display: inline-block;
+
+    position: relative;
+
+    color: rgb(78, 157, 177);
+
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.welcome_text_box {
+    width: 240px;
+
+    margin-left: 30px;
+    margin-top: 40px;
+    position: relative;
+
+    background-color: rgb(236, 236, 236);
+    border-radius: 5px;
+
+    border-right: 2px solid rgb(220, 220, 220);
+    border-bottom: 2px solid rgb(220, 220, 220);
+
+    padding: 10px;
+}
+
+.welcome_next {
+    width: 80px;
+    height: 15px;
+    padding: 10px;
+    padding-top: 14px;
+    padding-bottom: 20px;
+
+    margin-right: 40px;
+
+    position: fixed;
+
+    display: block;
+
+    bottom: 0;
+    right: 0;
+
+    text-align: center;
+
+    border-top-left-radius: 10px;
+
+    background-color: rgb(236, 236, 236);
+
+    color: black;
+    text-decoration: none;
+
+    border: 1px solid rgb(220, 220, 220);
+    border-right: none;
+    border-bottom: none;
 }
