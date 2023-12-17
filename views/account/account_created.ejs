@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N3DS</title>
+
+    <link rel="stylesheet" href="../../css/aquamarine.css">
+</head>
+
+<body>
+    <top>
+        <img class="welcome_top_img" src="../../img/welcome/welcome3.png" style="top: 0px; width: 370px; left: 15px;">
+    </top>
+    <bottom>
+        <div class="welcome_text_box" style="text-align:center;">
+            <span class="welcome_question">Welcome to Aquamarine!</span>
+            
+            We hope you have fun!
+        
+        </div>
+        <a class="welcome_next" href="javascript:void(0)" onclick="window.location.pathname = '/titles/show'">Done!</a>
+    </bottom>
+</body>
+
+<script src="../../js/jquery-3.7.1-min.js"></script>
+<script id="disableSidebar" src="../../js/aquamarine_user_creation.js"></script>
+<script>cave.snd_stopBgm(); cave.snd_playBgm("BGM_CAVE_SYOKAI2");</script>

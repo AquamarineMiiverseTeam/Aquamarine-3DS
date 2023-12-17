@@ -22,20 +22,22 @@
             <div style="position: relative; width: 310px;">
                 <% for (let i = 0; i < communities.length; i++) {
                     const community = communities[i];%>
-                    
-                    <div class="community_home">
-                        <img class="community_icon_home" width="50px" src="../../img/icons/<%= community.id %>.jpg">
-                        <div class="community_name_wrapper">
-                            <span class="community_name_home"><%= community.name %> Community</span>
-                            <span class="community_platform_indicator_home"><% if (community.platform == "3ds") {%>
-                                3DS Games
-                            <%} else {%>
+                    <div class="community_home" href="communities/<%= community.id %>">
+                        <a href="../communities/<%= community.id %>">
+                            
+                            <img class="community_icon_home" width="50px" src="../../img/icons/<%= community.id %>.jpg">
+                            <div class="community_name_wrapper">
+                                <span class="community_name_home"><%= community.name %> Community</span>
+                                <span class="community_platform_indicator_home"><% if (community.platform == "3ds") {%>
+                                    3DS Games
+                                <%} else {%>
                                 Wii U Games
-                            <%} %></span>
-                        </div>
+                                <%} %></span>
+                            </div>
+                        
+                        </a>
                         
                     </div>
-        
                 <%}%>
             </div>
         </div>

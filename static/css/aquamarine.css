@@ -104,6 +104,16 @@ long {
     border-bottom: dashed rgb(161, 161, 161) 1px;
 
     text-align: left;
+
+    z-index: 10;
+
+    color: black;
+    text-decoration: none;
+}
+
+.community_home * {
+    color: black;
+    text-decoration: none;
 }
 
 .community_icon_home {
@@ -196,6 +206,9 @@ long {
     border-bottom: 2px solid rgb(220, 220, 220);
 
     padding: 10px;
+
+    color: black;
+    text-decoration: none;
 }
 
 .welcome_next {
@@ -238,6 +251,17 @@ long {
     margin-bottom: 10px;
 }
 
+.welcome_account {
+    display: block;
+    width: 100%;
+
+    text-align: center;
+    margin-top: 40px;
+
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
 .welcome_already_account {
     display: block;
     width: 100%;
@@ -247,4 +271,29 @@ long {
 
     font-weight: bold;
     letter-spacing: -1px;
+}
+
+.welcome_account_form {
+    margin-top: 50px;
+    width: 240px;
+
+    margin-left: 40px;
+}
+
+.welcome_account_form input[type="text"], .welcome_account_form input[type="password"], .welcome_account_form input[type="confirmPassword"] {
+    display: inline;
+
+    padding: 5px;
+    font-size: 18px;
+    width: 226px;
+}
+
+.welcome_account_form input[type="submit"] {
+    display: inline;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    margin-top: 10px;
+    margin-left: 86px;
 }

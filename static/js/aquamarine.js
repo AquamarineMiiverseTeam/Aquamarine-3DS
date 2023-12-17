@@ -1,5 +1,5 @@
 // if its true, do testing things
-var testingMode = false;
+var testingMode = true;
 
 // if a disableSidebar element is found, disable the sidebar
 if (document.getElementById("disableSidebar")) cave.toolbar_setVisible(0);
@@ -50,7 +50,10 @@ function onToolbarPress(number, setActive) {
 
             alert("That feature isn't ready yet, but this will eventually be your menu! For now, let's show you our error screen!")
             
-            window.location.pathname = "/titles/error/1234/" + encodeURIComponent(Base64.encode("Hello! Thank your for participating in this test error!"));
+            var paths = window.location.pathname.split("/");
+
+            if (paths[1] != "communities" || testingMode == false) window.location.pathname = "/titles/error/1234/" + encodeURIComponent(Base64.encode("Hello! Thank your for participating in this test error!"));
+            else paths[2] = parseInt(paths[2]) + 1; window.location.pathname = paths.join("/");
             break;
         case 2:
             //alert("Activity Feed")
@@ -95,9 +98,4 @@ function banMessage()
 {
     cave.error_callFreeErrorViewer(20102, "You have been banned. MUAAHHAAHHAHAHAHAHHAHAHAHAHAHHAHAAHHAH!!!!!!!!!");
     cave.exitApp();
-}
-
-function load_welcome_page(hide, display) {
-    $("#page-" + hide.toString()).hide()
-    $("#page-" + display.toString()).show();
 }
