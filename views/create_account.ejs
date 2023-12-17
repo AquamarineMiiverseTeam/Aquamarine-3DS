@@ -15,22 +15,64 @@
             <img class="welcome_top_img" src="../../img/welcome/welcome1.png">
         </top>
         <bottom>
-            <div class="welcome_text_box">Welcome to Aquamarine! It seems that you don't have an account? Let's get one set up!</div>
-            <a class="welcome_next" href="javascript:void(0)" onclick="load_welcome_page(2, 1)">Next</a>
-        </bottom>
-    </div>
-    
-
-    <div id="page-2" style="display: none;">
-        <top>
-            <span class="welcome_to_aquamarine">Welcome to Aquamarine!</span>
-            <img class="welcome_top_img" src="../../img/welcome/welcome1.png">
-        </top>
-        <bottom>
-            <div class="welcome_text_box">This is the second page! This means it's working.</div>
+            <div class="welcome_text_box">Welcome to Aquamarine! It seems you're not logged in? Let's get this device set up!</div>
             <a class="welcome_next" href="javascript:void(0)" onclick="load_welcome_page(1, 2)">Next</a>
         </bottom>
     </div>
+
+    <div id="page-2" style="display: none;">
+        <top>
+            <span class="welcome_already_account">Do you already have a Aquamarine account?</span>
+        </top>
+        <bottom>
+            <div class="welcome_text_box" style="margin-top: 75px; margin-left: 70px; width: 160px;">
+            
+                <div style="padding-bottom: 25px; padding-top: 25px; text-align: center; word-spacing: 50px;">
+                    <a class="welcome_text_box" style="margin: 0;" href="javascript:void(0)" onclick='alert("Let\x27s log into your account!"); load_welcome_page(2, 3)'>Yes</a>
+                    <a class="welcome_text_box" style="margin: 0;" href="javascript:void(0)" onclick='alert("Let\x27s create an account!")'>No</a>
+                </div>
+
+            </div>
+        </bottom>
+    </div>
+
+    <div id="page-3" style="display: none;">
+        <top>
+            <span class="welcome_already_account">Please enter your Aquamarine account credentials</span>
+        </top>
+        <bottom>
+            <form action="https://api.olv.nonamegiven.xyz/v1/people/login" method="post" enctype="multipart/form-data">
+                <input type="text" placeholder="NNID.." name="nnid">
+                <input type="password" placeholder="Password.." name="password">
+
+                <input type="submit">
+            </form>
+
+            <form action="https://api.olv.nonamegiven.xyz/v1/people/login" method="post" enctype="multipart/form-data">
+                <input type="text" placeholder="NNID.." name="nnid">
+                <input type="password" placeholder="Password.." name="password">
+
+                <input type="submit">
+            </form>
+        </bottom>
+    </div>
+    
+    <div id="page-4" style="display: none;">
+        <top>
+            <img class="welcome_top_img" src="../../img/welcome/welcome2.png" style="width: 300px; margin-left: 50px;">
+        </top>
+        <bottom>
+            <div class="welcome_text_box">
+                <span class="welcome_question">What is Aquamarine?</span>
+                
+                Aquamarine is an online social media platform designed to help 3DS and Wii U players communicate.
+            
+            </div>
+            <a class="welcome_next" href="javascript:void(0)" onclick="load_welcome_page(3, 4)">Next</a>
+        </bottom>
+    </div>
+    
+    
 </body>
 
 <script src="../../../js/jquery-3.7.1-min.js"></script>

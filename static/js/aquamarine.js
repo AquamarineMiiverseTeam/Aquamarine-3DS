@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
 function onContentLoad()
 {
     // check if back button should be on or off
-    if (history.length > 1) cave.toolbar_setButtonType(1);
-    else if (history.length <= 1) cave.toolbar_setButtonType(0);
+    if (history.length > 1 && !document.getElementById("disableBackButton")) cave.toolbar_setButtonType(1);
+    else if (history.length <= 1 || document.getElementById("disableBackButton")) cave.toolbar_setButtonType(0);
 
     cave.snd_playBgm("BGM_CAVE_MAIN");
     
@@ -97,7 +97,7 @@ function banMessage()
     cave.exitApp();
 }
 
-function load_welcome_page(display, hide) {
+function load_welcome_page(hide, display) {
     $("#page-" + hide.toString()).hide()
     $("#page-" + display.toString()).show();
 }
