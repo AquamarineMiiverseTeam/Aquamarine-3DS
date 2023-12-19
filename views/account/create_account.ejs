@@ -22,14 +22,14 @@
 
     <div id="page-2" style="display: none;">
         <top>
-            <span class="welcome_already_account">Do you already have a Aquamarine account?</span>
+            <span class="welcome_header">Do you already have a Aquamarine account?</span>
         </top>
         <bottom>
             <div class="welcome_text_box" style="margin-top: 75px; margin-left: 70px; width: 160px;">
             
                 <div style="padding-bottom: 25px; padding-top: 25px; text-align: center; word-spacing: 50px;">
-                    <a class="welcome_text_box" style="margin: 0;" href="javascript:void(0)" onclick='alert("Let\x27s log into your account!"); load_welcome_page(2, 3)'>Yes</a>
-                    <a class="welcome_text_box" style="margin: 0;" href="javascript:void(0)" onclick='alert("Let\x27s create an account!"); load_welcome_page(2, 10)'>No</a>
+                    <a class="welcome_text_box" style="margin: 0;" href="javascript:void(0)" onclick='alert("Let\x27s log into your account!"); load_welcome_page(2, 4)'>Yes</a>
+                    <a class="welcome_text_box" style="margin: 0;" href="javascript:void(0)" onclick='alert("Let\x27s create an account!"); load_welcome_page(2, 3)'>No</a>
                 </div>
 
             </div>
@@ -38,7 +38,22 @@
 
     <div id="page-3" style="display: none;">
         <top>
-            <span class="welcome_account">Please enter your Aquamarine account credentials.</span>
+            <img class="welcome_top_img" src="../../img/welcome/welcome2.png" style="width: 300px; margin-left: 50px;">
+        </top>
+        <bottom>
+            <div class="welcome_text_box">
+                <span class="welcome_text_box_header">What is Aquamarine?</span>
+                
+                Aquamarine is an online social media platform designed to help 3DS and Wii U players communicate.
+            
+            </div>
+            <a class="welcome_next" href="javascript:void(0)" onclick="load_welcome_page(3, 5)">Next</a>
+        </bottom>
+    </div>
+
+    <div id="page-4" style="display: none;">
+        <top>
+            <span class="welcome_header">Please enter your Aquamarine account credentials.</span>
         </top>
         <bottom>
             <form class="welcome_account_form" action="https://api.olv.nonamegiven.xyz/v1/people/login" method="post" enctype="multipart/form-data">
@@ -50,9 +65,9 @@
         </bottom>
     </div>
 
-    <div id="page-4" style="display: none;">
+    <div id="page-5" style="display: none;">
         <top>
-            <span class="welcome_account">Please enter the credentials you want to make your Aquamarine account with.</span>
+            <span class="welcome_header">Please enter the credentials you want to make your Aquamarine account with.</span>
         </top>
         <bottom>
             <form class="welcome_account_form" action="https://api.olv.nonamegiven.xyz/v1/people" method="post" enctype="multipart/form-data">
@@ -64,22 +79,6 @@
             </form>
         </bottom>
     </div>
-    
-    <div id="page-10" style="display: none;">
-        <top>
-            <img class="welcome_top_img" src="../../img/welcome/welcome2.png" style="width: 300px; margin-left: 50px;">
-        </top>
-        <bottom>
-            <div class="welcome_text_box">
-                <span class="welcome_question">What is Aquamarine?</span>
-                
-                Aquamarine is an online social media platform designed to help 3DS and Wii U players communicate.
-            
-            </div>
-            <a class="welcome_next" href="javascript:void(0)" onclick="load_welcome_page(3, 4)">Next</a>
-        </bottom>
-    </div>
-    
     
 </body>
 
