@@ -2,6 +2,7 @@ const express = require('express');
 const colors = require('colors');
 const ejs = require('ejs');
 const util = require('util');
+const path = require('path');
 
 const con = require('./database_con');
 const query = util.promisify(con.query).bind(con);
@@ -17,11 +18,10 @@ const config_http = require('./config/http.json');
 const logger = require('./middleware/log');
 app.use(auth);
 app.use(logger);
-app.use(express.static(__dirname + "/static"));
+app.use(express.static(path.join(__dirname, ".././CDN_Files/")));
 
 //Grab index of all routes and set them in our express app
 const routes = require('./routes/index');
-
 
 app.use('/titles', routes.UI_TITLES);
 app.use('/communities', routes.UI_COMMUNITIES);
