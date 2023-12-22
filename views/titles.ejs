@@ -22,11 +22,24 @@
                             <img class="community_icon_home" width="50px" src="../../img/icons/<%= community.id %>.jpg">
                             <div class="community_name_wrapper">
                                 <span class="community_name_home"><%= community.name %> Community</span>
-                                <span class="community_platform_indicator_home"><% if (community.platform == "3ds") {%>
-                                    3DS Games
-                                <%} else {%>
-                                Wii U Games
-                                <%} %></span>
+
+                                <% switch (community.platform) {
+                                    case 'wiiu':%>
+                                    <span class="platform_indicator_wrapper"><span style="background-color: #0099C9;">WiiU</span> Wii U Games</span>
+                                        <%break;
+                                    case '3ds':%>
+                                    <span class="platform_indicator_wrapper"><span style="background-color: #D3000F;">3DS</span> 3DS Games</span>
+                                        <%break;
+                                        case 'wii':%>
+                                    <span class="platform_indicator_wrapper"><span style="background-color: #cacaca;">Wii</span> Wii Games</span>
+                                        <%break;
+                                        case 'vc':%>
+                                    <span class="platform_indicator_wrapper"><span style="background-color: #525252;">VC</span> Virtual Console Games</span>
+                                        <%break;
+                                    default:%>
+                                    <span class="platform_indicator_wrapper"><span style="background-color: #777777;">Topic</span> General Topic</span>
+                                    <%break;
+                                }%>  
                             </div>
                         
                         </a>
