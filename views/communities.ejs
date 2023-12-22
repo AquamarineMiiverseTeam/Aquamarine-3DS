@@ -3,15 +3,16 @@
 
 <body>
     <top>
-        <img src="../../../img/banners-ctr/<%= community.id %>.jpg">
+        <img src="../../../img/banners-ctr/<%= community.id %>.jpg" width="400px" height="168px">
         <div class="community_data">
             <img src="../../../img/icons/<%= community.id %>.jpg" height="42px">
             <span class="community_name"><%= community.name %></span>
         </div>
     </top>
 
-    <long style="text-align: center; height: 800px;">
-
+    <long style="text-align: center; height: 400px; top: 220px;">
+        <div class="community_navbar"></div>
+        <div class="community_description"><span><%= community.description %></span></div>
     </long>
 </body>
 
