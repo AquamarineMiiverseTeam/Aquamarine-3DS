@@ -1,5 +1,5 @@
 module.exports = {
-    UI_TITLES : require('./titles'),
-    UI_COMMUNITIES : require('./communities'),
-    UI_ACCOUNT_CREATION : require('./account_pages')
+    UI_TITLES : require('./ui/titles'),
+    UI_COMMUNITIES : require('./ui/communities'),
+    UI_ACCOUNT_CREATION : require('./ui/account_pages')
 }
