@@ -15,7 +15,7 @@ route.get('/:id', async(req, res) => {
     //TODO: add error page
     if (!community) {res.sendStatus(404);}
     
-    const posts = await query("SELECT * FROM posts WHERE community_id=?", req.params.id);
+    const posts = await query("SELECT * FROM posts WHERE community_id=? ORDER BY create_time DESC", req.params.id);
 
     //Adding account data to each post
     for (let i = 0; i < posts.length; i++) {
