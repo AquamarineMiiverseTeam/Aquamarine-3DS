@@ -2,9 +2,9 @@
 
     <body>
         <top>
-            <img src="../../../img/banners-ctr/<%= community.id %>.jpg" width="400px" height="168px">
+            <img src="../../../img/banners-ctr/<%= community.id %>.jpg" width="400px" height="168px" onerror="this.src='../../../img/banners-ctr/placeholder-ctr.jpg'">
             <div class="community_data">
-                <img src="../../../img/icons/<%= community.id %>.jpg" height="42px">
+                <img src="../../../img/icons/<%= community.id %>.jpg" onerror="this.src='../../../img/icons/placeholder.jpg'" height="42px">
                 <span class="community_name">
                     <%= community.name %>
                 </span>
@@ -23,6 +23,9 @@
                             <div class="post_mii_name_wrapper">
                                 <span class="post_mii_name"><%= posts[i].mii_name %></span>
                                 <span class="post_mii_time"><%= moment(posts[i].create_time).fromNow() %></span>
+                                <% if (posts[i].topic_tag) { %>
+                                    <span class="post_topic_tag"><%= posts[i].topic_tag %></span>
+                                <% } %>
                             </div>
                         </div>
 
