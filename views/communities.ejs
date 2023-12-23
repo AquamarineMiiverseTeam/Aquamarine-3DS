@@ -34,7 +34,11 @@
                                 <span><%= posts[i].body %></span>
                             <%} else { %>
                                 <img src="../../../img/paintings/<%= posts[i].id %>.png" width="318px" style="margin-top: 15px;">
-                            <% } %>   
+                            <% } %>
+
+                            <% if (posts[i].screenshot) {%>
+                                <img src="../../../img/screenshots/<%= posts[i].id %>.jpg" width="300px" style="margin-top: 15px; margin-left: 9px;">
+                            <% } %>
                         </div>
                     </div>
                 <% } %>
