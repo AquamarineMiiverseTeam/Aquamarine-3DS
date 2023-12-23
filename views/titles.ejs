@@ -19,7 +19,7 @@
                     <div class="community_home" href="communities/<%= community.id %>">
                         <a href="../communities/<%= community.id %>">
                             
-                            <img class="community_icon_home" width="50px" src="../../img/icons/<%= community.id %>.jpg">
+                            <img class="community_icon_home" width="50px" src="../../img/icons/<%= community.id %>.jpg" onerror="this.src='../../../img/icons/placeholder.jpg'">
                             <div class="community_name_wrapper">
                                 <span class="community_name_home"><%= community.name %> Community</span>
 
