@@ -25,6 +25,7 @@ route.get('/:id', async(req, res) => {
         posts[i].mii_name = account.mii_name;
 
         posts[i].is_empathied_by_user = (await query("SELECT * FROM empathies WHERE post_id=? AND account_id=?", [posts[i].id, req.account[0].id])).length;
+        posts[i].empathy_count = (await query("SELECT * FROM empathies WHERE post_id=?", posts[i].id)).length;
     }
 
     res.render('communities.ejs', {

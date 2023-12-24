@@ -48,6 +48,10 @@
                                 <a class="yeahed" id="yeah_<%= posts[i].id %>" href="javascript:void(0)" onclick="create_empathy(<%= posts[i].id %>)"><span>Unyeah!</span></a>
                             <% } %>
                             
+                            <a class="post_stats_num">
+                                <span class="empathy_count"><%= posts[i].empathy_count %></span>
+                            </a>
+                            
                         </div>
                     </div>
                 <% } %>
