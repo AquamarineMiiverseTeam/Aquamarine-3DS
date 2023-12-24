@@ -4,7 +4,7 @@
         <top>
             <img src="../../../img/banners-ctr/<%= community.id %>.jpg" width="400px" height="168px" onerror="this.src='../../../img/banners-ctr/placeholder-ctr.jpg'">
             <div class="community_data">
-                <img src="../../../img/icons/<%= community.id %>.jpg" onerror="this.src='../../../img/icons/placeholder.jpg'" height="42px">
+                <img src="../../../img/icons/<%= community.id %>.jpg" onerror="this.src='../../../img/icons/placeholder.jpg'" height="42px" width="42px">
                 <span class="community_name">
                     <%= community.name %>
                 </span>
@@ -39,6 +39,10 @@
                             <% if (posts[i].screenshot) {%>
                                 <img src="../../../img/screenshots/<%= posts[i].id %>.jpg" width="300px" style="margin-top: 15px; margin-left: 9px;">
                             <% } %>
+                        </div>
+
+                        <div class="post_stats">
+                            <a class="yeah" id="yeah_<%= posts[i].id %>" href="javascript:void(0)"><span>Yeah!</span></a>
                         </div>
                     </div>
                 <% } %>
