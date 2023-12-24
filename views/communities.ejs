@@ -17,7 +17,7 @@
 
             <div class="posts_wrapper">
                 <% for (let i=0; i < posts.length; i++) {%>
-                    <div class="post">
+                    <div class="post" id="post_<%= posts[i].id %>">
                         <div class="post_mii_wrapper">
                             <img src="<%= posts[i].mii_image %>" width="50px" height="50px" class="post_mii_image">
                             <div class="post_mii_name_wrapper">
