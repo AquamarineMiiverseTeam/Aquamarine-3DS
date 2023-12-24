@@ -23,6 +23,8 @@ route.get('/:id', async(req, res) => {
         
         posts[i].mii_image = `http://mii-images.account.nintendo.net/${account.mii_hash}_normal_face.png`;
         posts[i].mii_name = account.mii_name;
+
+        posts[i].is_empathied_by_user = (await query("SELECT * FROM empathies WHERE post_id=? AND account_id=?", [posts[i].id, req.account[0].id])).length;
     }
 
     res.render('communities.ejs', {

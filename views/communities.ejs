@@ -42,7 +42,12 @@
                         </div>
 
                         <div class="post_stats">
-                            <a class="yeah" id="yeah_<%= posts[i].id %>" href="javascript:void(0)" onclick="create_empathy(<%= posts[i].id %>)"><span>Yeah!</span></a>
+                            <% if (posts[i].is_empathied_by_user == 0) { %>
+                                <a class="yeah" id="yeah_<%= posts[i].id %>" href="javascript:void(0)" onclick="create_empathy(<%= posts[i].id %>)"><span>Yeah!</span></a>
+                            <% } else { %>
+                                <a class="yeahed" id="yeah_<%= posts[i].id %>" href="javascript:void(0)" onclick="create_empathy(<%= posts[i].id %>)"><span>Unyeah!</span></a>
+                            <% } %>
+                            
                         </div>
                     </div>
                 <% } %>
