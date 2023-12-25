@@ -129,6 +129,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-config/database.json
 static/img/icons/*.png
 static/img/icons/*.jpg

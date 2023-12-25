@@ -4,15 +4,12 @@ const ejs = require('ejs');
 const util = require('util');
 const path = require('path');
 
-const con = require('./database_con');
-const query = util.promisify(con.query).bind(con);
-const auth = require('./middleware/auth');
+const auth = require('../auth_middleware');
 
 const app = express();
 app.set('view engine', 'ejs');
 
 const config_http = require('./config/http.json');
-
 
 //Grab logger middleware and use it. (Logs all incoming HTTP/HTTPS requests)
 const logger = require('./middleware/log');

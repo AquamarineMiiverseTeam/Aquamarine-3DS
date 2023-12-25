@@ -5,7 +5,7 @@
             <span class="post_mii_name"><%= post.mii_name %></span>
             <span class="post_mii_time"><%= moment(post.create_time).fromNow() %></span>
             <% if (post.topic_tag) { %>
-                <a class="post_topic_tag" href="?topic_tag=<%= post.topic_tag %>"><%= post.topic_tag %></a>
+                <a class="post_topic_tag" href="javascript:void(0)" onclick='getPostsByTopicTag(<%= post.community_id %>, "<%= post.topic_tag %>");'><%= post.topic_tag %></a>
             <% } %>
         </div>
     </div>
@@ -24,9 +24,9 @@
 
     <div class="post_stats">
         <% if (post.is_empathied_by_user == 0) { %>
-            <a class="yeah" id="yeah_<%= post.id %>" href="javascript:void(0)" onclick="create_empathy(<%= post.id %>)"><span>Yeah!</span></a>
+            <a class="yeah" id="yeah_<%= post.id %>" href="javascript:void(0)" onclick="create_empathy('<%= post.id %>')"><span>Yeah!</span></a>
         <% } else { %>
-            <a class="yeahed" id="yeah_<%= post.id %>" href="javascript:void(0)" onclick="create_empathy(<%= post.id %>)"><span>Unyeah!</span></a>
+            <a class="yeahed" id="yeah_<%= post.id %>" href="javascript:void(0)" onclick="create_empathy('<%= post.id %>')"><span>Unyeah!</span></a>
         <% } %>
         
         <a class="post_stats_num">

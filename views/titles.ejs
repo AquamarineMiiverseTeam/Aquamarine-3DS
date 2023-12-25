@@ -17,7 +17,7 @@
                 <% for (let i = 0; i < communities.length; i++) {
                     const community = communities[i];%>
                     <div class="community_home" href="communities/<%= community.id %>">
-                        <a href="../communities/<%= community.id %>">
+                        <a href="javascript:void(0)" id="<%= community.id %>" onclick="loadCommunity(this)">
                             
                             <img class="community_icon_home" width="50px" src="../../img/icons/<%= community.id %>.jpg" onerror="this.src='../../../img/icons/placeholder.jpg'">
                             <div class="community_name_wrapper">
