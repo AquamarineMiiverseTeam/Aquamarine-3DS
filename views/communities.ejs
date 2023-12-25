@@ -17,48 +17,23 @@
 
             <div class="posts_wrapper">
                 <% for (let i=0; i < posts.length; i++) {%>
-                    <div class="post" id="post_<%= posts[i].id %>">
-                        <div class="post_mii_wrapper">
-                            <img src="<%= posts[i].mii_image %>" width="50px" height="50px" class="post_mii_image">
-                            <div class="post_mii_name_wrapper">
-                                <span class="post_mii_name"><%= posts[i].mii_name %></span>
-                                <span class="post_mii_time"><%= moment(posts[i].create_time).fromNow() %></span>
-                                <% if (posts[i].topic_tag) { %>
-                                    <span class="post_topic_tag"><%= posts[i].topic_tag %></span>
-                                <% } %>
-                            </div>
-                        </div>
-
-                        <div class="post_body_wrapper">
-                            <% if (posts[i].body) {%>
-                                <span><%= posts[i].body %></span>
-                            <%} else { %>
-                                <img src="../../../img/paintings/<%= posts[i].id %>.png" width="318px" style="margin-top: 15px;">
-                            <% } %>
-
-                            <% if (posts[i].screenshot) {%>
-                                <img src="../../../img/screenshots/<%= posts[i].id %>.jpg" width="300px" style="margin-top: 15px; margin-left: 9px;">
-                            <% } %>
-                        </div>
-
-                        <div class="post_stats">
-                            <% if (posts[i].is_empathied_by_user == 0) { %>
-                                <a class="yeah" id="yeah_<%= posts[i].id %>" href="javascript:void(0)" onclick="create_empathy(<%= posts[i].id %>)"><span>Yeah!</span></a>
-                            <% } else { %>
-                                <a class="yeahed" id="yeah_<%= posts[i].id %>" href="javascript:void(0)" onclick="create_empathy(<%= posts[i].id %>)"><span>Unyeah!</span></a>
-                            <% } %>
-                            
-                            <a class="post_stats_num">
-                                <span class="empathy_count"><%= posts[i].empathy_count %></span>
-                            </a>
-                            
-                        </div>
-                    </div>
+                    <%- include("./partials/post.ejs", {
+                        post : posts[i]
+                    }) %>
                 <% } %>
             </div>
 
-            <a href="javascript:void(0)" onclick="location.reload()">Reload</a>
+            
+            <img style="display: none;" id="loading" src="../../img/loading.gif" width="20px">
         </long>
     </body>
 
-    <script src="../../js/CTR/aquamarine.js"></script>
+<script src="../../js/CTR/aquamarine.js"></script>
+<script defer>
+    $(window).on("scroll", function () {
+        if ($(window).scrollTop() + window.innerHeight > $(document).height() - 50) {
+            console.log("reached bottom!");
+            grabMorePosts(<%= community.id %>);
+        }
+    });
+</script>
