@@ -1,0 +1,37 @@
+<div class="post" id="post_<%= post.id %>">
+    <div class="post_mii_wrapper">
+        <img src="<%= post.mii_image %>" width="50px" height="50px" class="post_mii_image">
+        <div class="post_mii_name_wrapper">
+            <span class="post_mii_name"><%= post.mii_name %></span>
+            <span class="post_mii_time"><%= moment(post.create_time).fromNow() %></span>
+            <% if (post.topic_tag) { %>
+                <span class="post_topic_tag"><%= post.topic_tag %></span>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="post_body_wrapper">
+        <% if (post.body) {%>
+            <span><%= post.body %></span>
+        <%} else { %>
+            <img src="../../../img/paintings/<%= post.id %>.png" width="318px" style="margin-top: 15px;">
+        <% } %>
+
+        <% if (post.screenshot) {%>
+            <img src="../../../img/screenshots/<%= post.id %>.jpg" width="300px" style="margin-top: 15px; margin-left: 9px;">
+        <% } %>
+    </div>
+
+    <div class="post_stats">
+        <% if (post.is_empathied_by_user == 0) { %>
+            <a class="yeah" id="yeah_<%= post.id %>" href="javascript:void(0)" onclick="create_empathy(<%= post.id %>)"><span>Yeah!</span></a>
+        <% } else { %>
+            <a class="yeahed" id="yeah_<%= post.id %>" href="javascript:void(0)" onclick="create_empathy(<%= post.id %>)"><span>Unyeah!</span></a>
+        <% } %>
+        
+        <a class="post_stats_num">
+            <span class="empathy_count"><%= post.empathy_count %></span>
+        </a>
+        
+    </div>
+</div>
