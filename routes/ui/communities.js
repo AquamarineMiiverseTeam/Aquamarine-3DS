@@ -11,13 +11,15 @@ const query = util.promisify(con.query).bind(con);
 const ejs = require('ejs')
 
 route.get('/:id', async(req, res) => {
+    //Getting page querys
+    const topic_tag = (req.query['topic_tag']) ? ` AND topic_tag LIKE "%${req.query['topic_tag']}%" ` : '';
 
     const community = (await query("SELECT * FROM communities WHERE id=?", req.params.id))[0];
 
     //TODO: add error page
     if (!community) {res.sendStatus(404);}
     
-    const posts = await query("SELECT * FROM posts WHERE community_id=? ORDER BY create_time DESC LIMIT 5", req.params.id);
+    const posts = await query(`SELECT * FROM posts WHERE community_id=? ${topic_tag} ORDER BY create_time DESC`, req.params.id);
 
     //Adding account data to each post
     for (let i = 0; i < posts.length; i++) {
@@ -41,12 +43,13 @@ route.get("/:id/posts", async(req, res) => {
     const community_id = req.params.id;
     const offset = Number(req.query['offset']);
     const limit = Number(req.query['limit']);
+    const topic_tag = (req.query['topic_tag']) ? ` AND topic_tag LIKE "%${req.query['topic_tag']}%" ` : '';
 
     //Making sure all avaliable querys are there
     if (!offset || !limit) { res.sendStatus(400); return; }
 
     //Grabbing posts
-    const posts = await query("SELECT * FROM posts WHERE community_id=? ORDER BY create_time DESC LIMIT ?, ?", [req.params.id, offset, limit]);
+    const posts = await query(`SELECT * FROM posts WHERE community_id=? ${topic_tag} ORDER BY create_time DESC LIMIT ?, ?`, [req.params.id, offset, limit]);
 
     var post_html = "";
 

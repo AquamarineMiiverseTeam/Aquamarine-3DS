@@ -5,7 +5,7 @@
             <span class="post_mii_name"><%= post.mii_name %></span>
             <span class="post_mii_time"><%= moment(post.create_time).fromNow() %></span>
             <% if (post.topic_tag) { %>
-                <span class="post_topic_tag"><%= post.topic_tag %></span>
+                <a class="post_topic_tag" href="?topic_tag=<%= post.topic_tag %>"><%= post.topic_tag %></a>
             <% } %>
         </div>
     </div>
