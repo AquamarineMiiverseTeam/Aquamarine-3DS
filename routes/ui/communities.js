@@ -103,4 +103,13 @@ route.get("/:id/posts", async(req, res) => {
     res.send(post_html);
 })
 
+route.get('/:community_id/post', async (req, res) => {
+    var community = (await query("SELECT * FROM communities WHERE id=?", req.params.community_id))[0];
+
+    res.render('post_menu.ejs', {
+        community : community,
+        pjax : req.get('pjax')
+    });
+})
+
 module.exports = route;

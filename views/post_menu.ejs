@@ -1,0 +1,27 @@
+<% if (pjax != "on") {%>
+    <%- include('./partials/header') %>
+
+    <body>
+<%} %>
+        <top community_id="<%= community.id %>">
+            <div class="post_menu_banner"><div class="post_menu_symbol"></div></div>
+            <div class="community_data">
+                <img src="../../../img/icons/<%= community.id %>.jpg" onerror="this.src='../../../img/icons/placeholder.jpg'" height="42px" width="42px">
+                <span class="community_name">
+                    <%= community.name %>
+                </span>
+            </div>
+        </top>
+
+        <long style="text-align: center; height: 240px; top: 220px;">
+            
+        </long>
+
+        <script>
+
+        </script>
+
+<% if (pjax != "on") {%>
+    </body>
+    <script src="../../../../js/CTR/aquamarine.js"></script>
+<%} %>
