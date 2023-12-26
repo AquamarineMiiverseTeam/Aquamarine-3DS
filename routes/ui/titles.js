@@ -13,7 +13,8 @@ route.get('/show', async (req, res) => {
     var communities = (await query("SELECT * FROM communities ORDER BY create_time DESC"));
 
     res.render('titles.ejs', {
-        communities : communities
+        communities : communities,
+        pjax : req.get('pjax')
     });
 })
 
