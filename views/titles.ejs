@@ -1,6 +1,6 @@
-
-<%- include('partials/header') %>
-
+<% if (pjax != "on") {%>
+    <%- include('./partials/header') %>
+<%} %>
 <body>
     <top>
         <div class="communities_header_title_home">
@@ -51,6 +51,7 @@
     </long>
 </body>
 
-
-<script id="disableBackButton" defer src="../../js/CTR/aquamarine.js"></script>
+<% if (pjax != "on") {%>
+    <script src="../../../../js/CTR/aquamarine.js"></script>
+<%} %>
 <script>cave.toolbar_setActiveButton(3);</script>

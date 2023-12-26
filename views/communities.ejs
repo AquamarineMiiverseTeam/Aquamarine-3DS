@@ -1,3 +1,8 @@
+<% if (pjax != "on") {%>
+    <%- include('./partials/header') %>
+
+    <body>
+<%} %>
         <top>
             <img src="../../../img/banners-ctr/<%= community.id %>.jpg" width="400px" height="168px" onerror="this.src='../../../img/banners-ctr/placeholder-ctr.jpg'">
             <div class="community_data">
@@ -28,12 +33,16 @@
             <img style="display: none;" id="loading" src="../../img/loading.gif" width="20px">
         </long>
 
-<script src="../../js/CTR/aquamarine.js"></script>
-<script defer>
-    $(window).on("scroll", function () {
-        if ($(window).scrollTop() + window.innerHeight > $(document).height() - 50) {
-            console.log("reached bottom!");
-            grabMorePosts(<%= community.id %>);
-        }
-    });
-</script>
+        <script defer>
+            $(window).on("scroll", function () {
+                if ($(window).scrollTop() + window.innerHeight > $(document).height() - 50) {
+                console.log("reached bottom!");
+                grabMorePosts(<%= community.id %>);
+            }
+        });
+        </script>
+
+<% if (pjax != "on") {%>
+    </body>
+    <script src="../../../../js/CTR/aquamarine.js"></script>
+<%} %>
