@@ -14,15 +14,24 @@ const Base64 = require('../../../base64')
 
 route.get('/:id', async(req, res) => {
     //Getting page querys
-    //im sorry trace
     const topic_tag = (req.query['topic_tag']) ? `AND topic_tag LIKE "%${req.query['topic_tag']}%"` : '';
+    var community = req.params.id;
 
-    const community = (await query("SELECT * FROM communities WHERE id=?", req.params.id))[0];
+    //If the community id is zero, a game must be trying to access it's own community page, in this case, find the community that matches
+    //the param_pack's title id
+    if (community == 0) {
+        console.log(req.param_pack.title_id)
+
+        community = (await query(`SELECT * FROM communities WHERE title_ids LIKE "%${req.param_pack.title_id}%"`))[0]
+        console.log(community)
+    } else {
+        community = (await query(`SELECT * FROM communities WHERE id=?`, community))[0]
+    }
 
     //TODO: add error page
-    if (!community) {res.sendStatus(404);}
+    if (!community) {res.sendStatus(404); return;}
     
-    const posts = await query(`SELECT * FROM posts WHERE community_id=? ${topic_tag} ORDER BY create_time DESC`, req.params.id);
+    const posts = await query(`SELECT * FROM posts WHERE community_id=? ${topic_tag} ORDER BY create_time DESC`, community.id);
 
     //Adding account data to each post
     for (let i = 0; i < posts.length; i++) {
@@ -38,7 +47,8 @@ route.get('/:id', async(req, res) => {
     res.render('communities.ejs', {
         community : community,
         posts : posts,
-        moment : moment
+        moment : moment,
+        pjax : req.get('pjax')
     });
 })
 
