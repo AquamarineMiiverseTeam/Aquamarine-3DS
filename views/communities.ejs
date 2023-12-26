@@ -1,9 +1,9 @@
 <% if (pjax != "on") {%>
     <%- include('./partials/header') %>
 
-    <body community_id="<%= community.id %>">
+    <body>
 <%} %>
-        <top>
+        <top community_id="<%= community.id %>">
             <img src="../../../img/banners-ctr/<%= community.id %>.jpg" width="400px" height="168px" onerror="this.src='../../../img/banners-ctr/placeholder-ctr.jpg'">
             <div class="community_data">
                 <img src="../../../img/icons/<%= community.id %>.jpg" onerror="this.src='../../../img/icons/placeholder.jpg'" height="42px" width="42px">
@@ -18,7 +18,7 @@
             <div class="community_description"><span><%= community.description %></span></div>
 
             <div class="post_options">
-                <a id="post_button">Post</a><a id="yeahed_posts" href="javascript:void(0)" onclick="getPostsByYeahed($('body').attr('community_id'))">Yeahed Posts</a>
+                <a id="post_button" href="javascript:void(0)" onclick="loadPage('../../../../communities/'+$('top').attr('community_id')+'/post', 'body'); $('body').empty();">Post</a><a id="yeahed_posts" href="javascript:void(0)" onclick="getPostsByYeahed($('top').attr('community_id'))">Yeahed Posts</a>
             </div>
 
             <div class="posts_wrapper">
@@ -37,7 +37,7 @@
             $(window).on("scroll", function () {
                 if ($(window).scrollTop() + window.innerHeight > $(document).height() - 50) {
                 console.log("reached bottom!");
-                grabMorePosts($("body").attr("community_id"));
+                grabMorePosts($("top").attr("community_id"));
             }
         });
         </script>
