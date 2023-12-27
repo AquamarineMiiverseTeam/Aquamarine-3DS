@@ -34,6 +34,9 @@
         </long>
 
         <script defer>
+            cave.toolbar_setMode(0);
+            cave.transition_end();
+            
             $(window).on("scroll", function () {
                 if ($(window).scrollTop() + window.innerHeight > $(document).height() - 50) {
                 console.log("reached bottom!");

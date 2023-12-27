@@ -28,8 +28,16 @@
                 <input type="number" value="<%= community.id %>" name="community_id" id="community_id">
                 <input type="number" value="0" name="is_autopost" id="is_autopost">
                 <input type="number" value="0" name="is_app_jumpable" id="is_app_jumpable">
+                <input type="number" value="0" name="is_spoiler" id="is_spoiler">
 
-                <input type="submit">
+                <div class="post_menu_input">
+                    <a id="text" class="post_menu_selector selected_text" href="javascript:void(0)"><div class="post_menu_text_icon"></div></a><a id="draw" class="post_menu_selector" href="javascript:void(0)"><div class="post_menu_draw_icon"></div></a>
+
+                    <textarea class="post_menu_body" placeholder="Share your thought's to this community!" form="postForm" name="body" maxlength="150"></textarea>
+
+                    <input type="text" id="painting_input" style="display: none;">
+                    <img id="painting_preview" width="320px" height="120px" style="position: relative; bottom: 5px; display: none;">
+                </div>
             </form>
         </long>
 
@@ -44,6 +52,42 @@
                 if ($(".feeling_selector_bg input[value='4']")[0].checked) {$(".feeling_selector_bg input[value='4']").css("background", "url('../../img/feeling-icons.png') -30px -140px")} else {$(".feeling_selector_bg input[value='4']").css("background", "url('../../img/feeling-icons.png') 0px -140px")}
                 if ($(".feeling_selector_bg input[value='5']")[0].checked) {$(".feeling_selector_bg input[value='5']").css("background", "url('../../img/feeling-icons.png') -30px -175px")} else {$(".feeling_selector_bg input[value='5']").css("background", "url('../../img/feeling-icons.png') 0px -175px")}
             })
+
+            $(".post_menu_selector").click(function(e) {
+                if (e.currentTarget.id == "text") {
+                    $("#text").addClass("selected_text");
+                    $("#draw").removeClass("selected_draw");
+
+                    $(".post_menu_body").css("display", "inline-block");
+                    $(".post_menu_body").attr("name", "body");
+
+                    $("#painting_preview").css("display", "none");
+                    $("#painting_input").removeAttr("name")
+                } else {
+                    $("#text").removeClass("selected_text");
+                    $("#draw").addClass("selected_draw");
+
+                    $(".post_menu_body").css("display", "none");
+                    $(".post_menu_body").removeAttr("name");
+
+                    $("#painting_preview").css("display", "inline-block");
+                    $("#painting_input").attr("name", "painting");
+
+                    cave.memo_open();
+                    $("#painting_preview")[0].src = "data:image/bmp;base64,"+cave.memo_getImageBmp();
+                    $("#painting_input")[0].value = cave.memo_getImageBmp();
+                }
+            });
+
+            cave.toolbar_setCallback(8, function() {
+                $("#postForm").submit();
+                cave.transition_begin();
+            })
+
+            $(".feeling_selector_bg input[value='0']")[0].checked = true;
+            $("input[name='feeling_id']").change();
+            cave.toolbar_setWideButtonMessage("Post");
+            cave.toolbar_setMode(1);
         </script>
 
 <% if (pjax != "on") {%>

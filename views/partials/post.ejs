@@ -12,10 +12,10 @@
 
     <div class="post_body_wrapper">
         <% if (post.body) {%>
-            <span><%= post.body %></span>
-        <%} else if (post.platform == "wiiu") { %>
+            <span <% if (!post.topic_tag) {%> style="bottom: 23px" <%} %>><%= post.body %></span>
+        <%} else if (post.posted_from == "wiiu") { %>
             <img src="../../../img/paintings/<%= post.id %>.png" width="318px" style="margin-top: 15px;">
-        <% } else { %>
+        <% } else if (post.posted_from == "3ds") { %>
             <img src="../../../img/paintings/<%= post.id %>.bmp" width="318px" style="margin-top: 15px;">
         <% } %>
 
