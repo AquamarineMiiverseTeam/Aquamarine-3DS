@@ -13,8 +13,10 @@
     <div class="post_body_wrapper">
         <% if (post.body) {%>
             <span><%= post.body %></span>
-        <%} else { %>
+        <%} else if (post.platform == "wiiu") { %>
             <img src="../../../img/paintings/<%= post.id %>.png" width="318px" style="margin-top: 15px;">
+        <% } else { %>
+            <img src="../../../img/paintings/<%= post.id %>.bmp" width="318px" style="margin-top: 15px;">
         <% } %>
 
         <% if (post.screenshot) {%>
