@@ -14,11 +14,36 @@
         </top>
 
         <long style="text-align: center; height: 240px; top: 220px;">
-            
+            <form id="postForm" method="post" action="https://api.olv.nonamegiven.xyz/v1/posts" enctype="multipart/form-data">
+                <div class="feeling_selector_bg">
+                    <input type="radio" name="feeling_id" value="0" form="postForm">
+                    <input type="radio" name="feeling_id" value="1" form="postForm">
+                    <input type="radio" name="feeling_id" value="2" form="postForm">
+                    <input type="radio" name="feeling_id" value="3" form="postForm">
+                    <input type="radio" name="feeling_id" value="4" form="postForm">
+                    <input type="radio" name="feeling_id" value="5" form="postForm">
+                </div>
+
+                <input type="number" value="1" name="language_id" id="language_id">
+                <input type="number" value="<%= community.id %>" name="community_id" id="community_id">
+                <input type="number" value="0" name="is_autopost" id="is_autopost">
+                <input type="number" value="0" name="is_app_jumpable" id="is_app_jumpable">
+
+                <input type="submit">
+            </form>
         </long>
 
         <script>
+            $("input[name='feeling_id']").change(function(e) {
+                cave.snd_playSe("SE_OLV_OK_SUB");
 
+                if ($(".feeling_selector_bg input[value='0']")[0].checked) {$(".feeling_selector_bg input[value='0']").css("background", "url('../../img/feeling-icons.png') -30px 0px")} else {$(".feeling_selector_bg input[value='0']").css("background", "url('../../img/feeling-icons.png') 0px 0px")}
+                if ($(".feeling_selector_bg input[value='1']")[0].checked) {$(".feeling_selector_bg input[value='1']").css("background", "url('../../img/feeling-icons.png') -30px -35px")} else {$(".feeling_selector_bg input[value='1']").css("background", "url('../../img/feeling-icons.png') 0px -35px")}
+                if ($(".feeling_selector_bg input[value='2']")[0].checked) {$(".feeling_selector_bg input[value='2']").css("background", "url('../../img/feeling-icons.png') -30px -70px")} else {$(".feeling_selector_bg input[value='2']").css("background", "url('../../img/feeling-icons.png') 0px -70px")}
+                if ($(".feeling_selector_bg input[value='3']")[0].checked) {$(".feeling_selector_bg input[value='3']").css("background", "url('../../img/feeling-icons.png') -30px -105px")} else {$(".feeling_selector_bg input[value='3']").css("background", "url('../../img/feeling-icons.png') 0px -105px")}
+                if ($(".feeling_selector_bg input[value='4']")[0].checked) {$(".feeling_selector_bg input[value='4']").css("background", "url('../../img/feeling-icons.png') -30px -140px")} else {$(".feeling_selector_bg input[value='4']").css("background", "url('../../img/feeling-icons.png') 0px -140px")}
+                if ($(".feeling_selector_bg input[value='5']")[0].checked) {$(".feeling_selector_bg input[value='5']").css("background", "url('../../img/feeling-icons.png') -30px -175px")} else {$(".feeling_selector_bg input[value='5']").css("background", "url('../../img/feeling-icons.png') 0px -175px")}
+            })
         </script>
 
 <% if (pjax != "on") {%>
