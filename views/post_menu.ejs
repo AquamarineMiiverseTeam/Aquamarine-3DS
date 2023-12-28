@@ -24,21 +24,21 @@
                     <input type="radio" name="feeling_id" value="5" form="postForm">
                 </div>
 
-                <input type="number" value="1" name="language_id" id="language_id">
-                <input type="number" value="<%= community.id %>" name="community_id" id="community_id">
-                <input type="number" value="0" name="is_autopost" id="is_autopost">
-                <input type="number" value="0" name="is_app_jumpable" id="is_app_jumpable">
-                <input type="number" value="0" name="is_spoiler" id="is_spoiler">
-
                 <div class="post_menu_input">
                     <a id="text" class="post_menu_selector selected_text" href="javascript:void(0)"><div class="post_menu_text_icon"></div></a><a id="draw" class="post_menu_selector" href="javascript:void(0)"><div class="post_menu_draw_icon"></div></a>
-                    <a id="spoiler" class="post_menu_selector spoiler" href="javascript:void(0)"></a>
+                    <a id="spoiler" class="post_menu_selector spoiler" href="javascript:void(0)"><div></div></a>
 
                     <textarea class="post_menu_body" placeholder="Share your thought's to this community!" form="postForm" name="body" maxlength="150"></textarea>
 
                     <input type="text" id="painting_input" style="display: none;">
                     <img id="painting_preview" width="320px" height="120px" style="position: relative; bottom: 5px; display: none;">
                 </div>
+
+                <input type="number" value="1" name="language_id" id="language_id">
+                <input type="number" value="<%= community.id %>" name="community_id" id="community_id">
+                <input type="number" value="0" name="is_autopost" id="is_autopost">
+                <input type="number" value="0" name="is_app_jumpable" id="is_app_jumpable">
+                <input type="number" value="0" name="is_spoiler" id="is_spoiler">
             </form>
         </long>
 
