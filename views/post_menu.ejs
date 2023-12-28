@@ -32,6 +32,7 @@
 
                 <div class="post_menu_input">
                     <a id="text" class="post_menu_selector selected_text" href="javascript:void(0)"><div class="post_menu_text_icon"></div></a><a id="draw" class="post_menu_selector" href="javascript:void(0)"><div class="post_menu_draw_icon"></div></a>
+                    <a id="spoiler" class="post_menu_selector spoiler" href="javascript:void(0)"></a>
 
                     <textarea class="post_menu_body" placeholder="Share your thought's to this community!" form="postForm" name="body" maxlength="150"></textarea>
 
@@ -53,7 +54,7 @@
                 if ($(".feeling_selector_bg input[value='5']")[0].checked) {$(".feeling_selector_bg input[value='5']").css("background", "url('../../img/feeling-icons.png') -30px -175px")} else {$(".feeling_selector_bg input[value='5']").css("background", "url('../../img/feeling-icons.png') 0px -175px")}
             })
 
-            $(".post_menu_selector").click(function(e) {
+            $("#text, #draw").click(function(e) {
                 if (e.currentTarget.id == "text") {
                     $("#text").addClass("selected_text");
                     $("#draw").removeClass("selected_draw");
@@ -79,9 +80,23 @@
                 }
             });
 
+            $("#spoiler").click(function(e) {
+                cave.snd_playSe("SE_OLV_OK_SUB");
+
+                if ($("#is_spoiler").val() == '1') {
+                    $("#is_spoiler").val(0);
+                    $("#spoiler").removeClass("selected_draw");
+                    $("#spoiler").css("border-left", "#c5c5c5 1px solid");
+                } else {
+                    $("#is_spoiler").val(1);
+                    $("#spoiler").addClass("selected_draw");
+                    $("#spoiler").css("border-left", "#868686 1px solid");
+                }
+            })
+
             cave.toolbar_setCallback(8, function() {
                 $("#postForm").submit();
-                cave.transition_begin();
+                lurl.splice(0, lurl.length)
             })
 
             $(".feeling_selector_bg input[value='0']")[0].checked = true;
