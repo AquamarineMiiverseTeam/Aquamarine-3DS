@@ -96,13 +96,14 @@
 
             cave.toolbar_setCallback(8, function() {
                 $("#postForm").submit();
-                lurl.splice(0, lurl.length)
             })
 
             $(".feeling_selector_bg input[value='0']")[0].checked = true;
             $("input[name='feeling_id']").change();
+
             cave.toolbar_setWideButtonMessage("Post");
             cave.toolbar_setMode(1);
+            cave.transition_end();
         </script>
 
 <% if (pjax != "on") {%>

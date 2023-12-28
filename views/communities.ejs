@@ -18,7 +18,7 @@
             <div class="community_description"><span><%= community.description %></span></div>
 
             <div class="post_options">
-                <a id="post_button" href="javascript:void(0)" onclick="loadPage('../../../../communities/'+$('top').attr('community_id')+'/post', 'body'); $('body').empty();">Post</a><a id="yeahed_posts" href="javascript:void(0)" onclick="getPostsByYeahed($('top').attr('community_id'))">Yeahed Posts</a>
+                <a id="post_button" href="javascript:void(0)" onclick="lurl.push(location.pathname.replace('posts', '')); load('../../../../communities/'+$('top').attr('community_id')+'/post', 'body'); $('body').empty();">Post</a><a id="yeahed_posts" href="javascript:void(0)" onclick="getPostsByYeahed($('top').attr('community_id'))">Yeahed Posts</a>
             </div>
 
             <div class="posts_wrapper">
