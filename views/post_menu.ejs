@@ -16,21 +16,26 @@
         <long style="text-align: center; height: 240px; top: 220px;">
             <form id="postForm" method="post" action="https://api.olv.nonamegiven.xyz/v1/posts" enctype="multipart/form-data">
                 <div class="feeling_selector_bg">
-                    <input type="radio" name="feeling_id" value="0" form="postForm">
-                    <input type="radio" name="feeling_id" value="1" form="postForm">
-                    <input type="radio" name="feeling_id" value="2" form="postForm">
-                    <input type="radio" name="feeling_id" value="3" form="postForm">
-                    <input type="radio" name="feeling_id" value="4" form="postForm">
-                    <input type="radio" name="feeling_id" value="5" form="postForm">
+                    <div style="width: 230px; display: inline-block; vertical-align: middle; text-align: left;">
+                        <input type="radio" name="feeling_id" value="0" form="postForm" style="margin-left: 4px;">
+                        <input type="radio" name="feeling_id" value="1" form="postForm">
+                        <input type="radio" name="feeling_id" value="2" form="postForm">
+                        <input type="radio" name="feeling_id" value="3" form="postForm">
+                        <input type="radio" name="feeling_id" value="4" form="postForm">
+                        <input type="radio" name="feeling_id" value="5" form="postForm">
+                    </div>
+
+                    <a href="javascript:void(0)" class="post_menu_screenshot_button"><div></div></a>
                 </div>
+
+                
 
                 <div class="post_menu_input">
                     <a id="text" class="post_menu_selector selected_text" href="javascript:void(0)"><div class="post_menu_text_icon"></div></a><a id="draw" class="post_menu_selector" href="javascript:void(0)"><div class="post_menu_draw_icon"></div></a>
                     <a id="spoiler" class="post_menu_selector spoiler" href="javascript:void(0)"><div></div></a>
 
-                    <textarea class="post_menu_body" placeholder="Share your thought's to this community!" form="postForm" name="body" maxlength="150"></textarea>
+                    <textarea class="post_menu_body" placeholder="Share your thought's to this community!" form="postForm" name="body"></textarea>
 
-                    <input type="text" id="painting_input" style="display: none;">
                     <img id="painting_preview" width="320px" height="120px" style="position: relative; bottom: 5px; display: none;">
                 </div>
 
@@ -39,6 +44,8 @@
                 <input type="number" value="0" name="is_autopost" id="is_autopost">
                 <input type="number" value="0" name="is_app_jumpable" id="is_app_jumpable">
                 <input type="number" value="0" name="is_spoiler" id="is_spoiler">
+                <input type="text" id="painting_input" style="display: none;">
+                <input type="text" id="screenshot_input" style="display: none;">
             </form>
         </long>
 
