@@ -4,7 +4,7 @@ const ejs = require('ejs');
 const util = require('util');
 const path = require('path');
 
-const auth = require('../auth_middleware');
+const auth = require('../Aquamarine-Utils/auth_middleware');
 
 const app = express();
 app.set('view engine', 'ejs');

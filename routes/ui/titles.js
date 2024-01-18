@@ -1,16 +1,14 @@
 const express = require('express');
 const route = express.Router();
-const xmlbuilder = require('xmlbuilder');
-const moment = require('moment');
 
+const database_query = require('../../../Aquamarine-Utils/database_query');
 const util = require('util');
 
-const con = require('../../../database_con');
-const query = util.promisify(con.query).bind(con);
+const con = require('../../../Aquamarine-Utils/database_con');
 
 route.get('/show', async (req, res) => {
 
-    var communities = (await query("SELECT * FROM communities ORDER BY create_time DESC"));
+    var communities = await database_query.getCommunities("desc", null, null, 0, null);
 
     res.render('titles.ejs', {
         communities : communities,
