@@ -9,11 +9,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bmp-js": "^0.1.0",
     "colors": "^1.4.0",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "fast-xml-parser": "^4.3.2",
+    "jimp": "^0.22.10",
+    "jpeg-js": "^0.4.4",
+    "knex": "^3.1.0",
     "moment": "^2.29.4",
     "mysql": "^2.18.1",
+    "pako": "^2.1.0",
+    "pngjs": "^7.0.0",
+    "promise-mysql": "^5.2.0",
+    "tga": "^1.0.7",
     "xmlbuilder": "^15.1.1"
   }
 }

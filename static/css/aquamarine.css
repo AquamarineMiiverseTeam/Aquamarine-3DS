@@ -61,7 +61,7 @@ long {
 
 .communities_header_home {
     width: 400px;
-    height: 220px;
+    height: 240px;
 }
 
 .communities_header_title_home {
@@ -69,9 +69,10 @@ long {
     top: 165px;
 
     padding: 10px;
+    padding-bottom: 0px;
 
-    background-color: rgb(233, 233, 233);
-    border-top: rgb(130, 214, 214) 5px solid;
+    background-color: rgb(255, 255, 255);
+    border-top: rgb(81, 206, 255) 5px solid;
 
     text-align: left;
 }
@@ -80,9 +81,38 @@ long {
     font-weight: bold;
 
     display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
 
-    margin: 5px;
-    margin-left: 40px;
+.communities_header_title_text_home::before {
+    background: url("/img/header-icons.png") -37px 0px;
+    content: "e";
+    color: rgba(0, 0, 0, 0);
+
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 37px;
+    height: 37px;
+    margin-right: 5px;
+}
+
+.n3ds_header_icon {
+    background: url("/img/header-icons.png") -105px 0px;
+    content: "e";
+    color: rgba(0, 0, 0, 0);
+
+    display: inline-block;
+    vertical-align: middle;
+
+    position: relative;
+    top: 10px;
+
+    width: 100px;
+    height: 37px;
+
+    float: right;
 }
 
 .communities_wrapper_home {
@@ -92,17 +122,20 @@ long {
     top: 220px;
 
     margin-top: 10px;
+    padding-bottom: 15px;
+}
+
+.communities_wrapper_home ul {
+    padding: 0;
 }
 
 .community_home {
     width: 310px;
-    height: 50px;
+    height: 40px;
     position: relative;
 
-    padding-top: 8px;
-    padding-bottom: 8px;
-
-    left: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 
     border-bottom: dashed rgb(161, 161, 161) 1px;
 
@@ -112,6 +145,8 @@ long {
 
     color: black;
     text-decoration: none;
+
+    list-style: none;
 }
 
 .community_home * {
@@ -130,12 +165,13 @@ long {
     font-weight: bold;
     font-size: 13px;
 
-    vertical-align: top;
+    vertical-align: middle;
 
     display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
 
-    width: 200px;
-    height: 100%;
+    width: 260px;
 }
 
 .new_communities_home {
@@ -144,7 +180,8 @@ long {
     position: relative;
     left: 5px;
 
-    background-color: rgb(78, 157, 177);
+    background-color: rgb(81, 206, 255);
+    border-bottom: 3px solid rgb(69, 174, 216);
 
     padding: 5px;
 
@@ -153,8 +190,30 @@ long {
     color: white;
 
     margin-bottom: 3px;
+    margin-top: 15px;
 
-    border-radius: 1px;
+    border-radius: 3px;
+}
+
+.popular_communities_home {
+    width: 300px;
+
+    position: relative;
+    left: 5px;
+
+    background-color: rgb(210, 122, 252);
+    border-bottom: 3px solid rgb(172, 99, 206);
+
+    padding: 5px;
+
+    text-align: left;
+
+    color: white;
+
+    margin-top: 15px;
+    margin-bottom: 3px;
+
+    border-radius: 3px;
 }
 
 .community_name_wrapper {

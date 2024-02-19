@@ -5,48 +5,48 @@
     <top>
         <div class="communities_header_title_home">
             <span class="communities_header_title_text_home">Communities</span>
+
+            <div class="n3ds_header_icon"></div>
         </div>
     </top>
 
     <long style="text-align: center;">
-
         <div class="communities_wrapper_home">
             <div class="new_communities_home">New Communities</div>
 
-            <div style="position: relative; width: 310px;">
-                <% for (let i = 0; i < communities.length; i++) {
-                    const community = communities[i];%>
-                    <div class="community_home" href="communities/<%= community.id %>">
+            <ul>
+                <% for (const community of new_communities) {%>
+                    <li class="community_home" href="communities/<%= community.id %>">
                         <a href="javascript:void(0)" id="<%= community.id %>" onclick="loadCommunity(this)">
                             
-                            <img class="community_icon_home" width="50px" src="../../img/icons/<%= community.id %>.jpg" onerror="this.src='../../img/icons/placeholder.jpg'">
+                            <img class="community_icon_home" width="40px" src="../../img/icons/<%= community.id %>.jpg" onerror="this.src='../../img/icons/placeholder.jpg'">
                             <div class="community_name_wrapper">
-                                <span class="community_name_home"><%= community.name %> Community</span>
-
-                                <% switch (community.platform) {
-                                    case 'wiiu':%>
-                                    <span class="platform_indicator_wrapper"><span style="background-color: #0099C9;">WiiU</span> Wii U Games</span>
-                                        <%break;
-                                    case '3ds':%>
-                                    <span class="platform_indicator_wrapper"><span style="background-color: #D3000F;">3DS</span> 3DS Games</span>
-                                        <%break;
-                                        case 'wii':%>
-                                    <span class="platform_indicator_wrapper"><span style="background-color: #cacaca;">Wii</span> Wii Games</span>
-                                        <%break;
-                                        case 'vc':%>
-                                    <span class="platform_indicator_wrapper"><span style="background-color: #525252;">VC</span> Virtual Console Games</span>
-                                        <%break;
-                                    default:%>
-                                    <span class="platform_indicator_wrapper"><span style="background-color: #777777;">Topic</span> General Topic</span>
-                                    <%break;
-                                }%>  
+                                <span class="community_name_home"><%= community.name %></span>
                             </div>
                         
                         </a>
                         
-                    </div>
+                    </li>
                 <%}%>
-            </div>
+            </ul>
+
+            <div class="popular_communities_home">Popular Communities</div>
+
+            <ul>
+                <% for (const community of popular_communities) {%>
+                    <li class="community_home" href="communities/<%= community.id %>">
+                        <a href="javascript:void(0)" id="<%= community.id %>" onclick="loadCommunity(this)">
+                            
+                            <img class="community_icon_home" width="40px" src="../../img/icons/<%= community.id %>.jpg" onerror="this.src='../../img/icons/placeholder.jpg'">
+                            <div class="community_name_wrapper">
+                                <span class="community_name_home"><%= community.name %> Community</span>
+                            </div>
+                        
+                        </a>
+                        
+                    </li>
+                <%}%>
+            </ul>
         </div>
     </long>
 </body>

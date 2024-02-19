@@ -30,6 +30,9 @@ function onContentLoad() {
     // set back button callbacks
     cave.toolbar_setCallback(99, goBack);
     cave.toolbar_setCallback(1, goBack);
+
+    // register boss for miiverse
+    cave.boss_registEx(1, 336);
 }
 
 function onToolbarPress(number, setActive) {
@@ -253,3 +256,21 @@ function banMessage() {
     cave.error_callFreeErrorViewer(20102, "You have been banned. MUAAHHAAHHAHAHAHAHHAHAHAHAHAHHAHAAHHAH!!!!!!!!!");
     cave.exitApp();
 }
+
+function checkNotifications() {
+    console.log("notifications check")
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://api.olv.nonamegiven.xyz/v1/notifications');
+    xhr.setRequestHeader("Content-Type", 'text/json');
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                cave.toolbar_setNotificationCount(parseInt(JSON.parse(xhr.responseText).notification_count));
+            }
+        }
+    }
+}
+
+setInterval(checkNotifications, 6000);

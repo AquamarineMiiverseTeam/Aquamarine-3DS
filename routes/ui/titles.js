@@ -1,17 +1,16 @@
 const express = require('express');
 const route = express.Router();
 
-const database_query = require('../../../Aquamarine-Utils/database_query');
-const util = require('util');
-
-const con = require('../../../Aquamarine-Utils/database_con');
+const common = require("../../../Aquamarine-Utils/common");
 
 route.get('/show', async (req, res) => {
 
-    var communities = await database_query.getCommunities("desc", null, null, 0, null);
+    var new_communities = await common.ui.getNewCommunities(5);
+    var popular_communities = await common.ui.getPopularCommunities(5)
 
     res.render('titles.ejs', {
-        communities : communities,
+        new_communities : new_communities,
+        popular_communities : popular_communities,
         pjax : req.get('pjax')
     });
 })
